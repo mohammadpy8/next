@@ -1,10 +1,12 @@
-
+import carsData from "../../data/carsData";
+import CardList from "../../components/template/CarList";
 
 const suv = () => {
+
+    const suvCars = carsData.filter(cars => cars.category === "suv");
+
     return (
-        <div>
-            
-        </div>
+        <CardList data={suvCars} />
     );
 };
 
