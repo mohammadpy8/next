@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import carsData from "../../data/carsData";
 
+import CarsDetail from "../../components/template/CarsDetail";
+
 const CarDetail = () => {
 
     const router = useRouter();
@@ -9,9 +11,7 @@ const CarDetail = () => {
     const carsDetails = carsData[carsId - 1];
 
     return (
-        <div>
-            
-        </div>
+        <CarsDetail detail={carsDetails} /> 
     );
 };
 
