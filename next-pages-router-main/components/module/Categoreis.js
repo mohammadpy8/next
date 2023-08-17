@@ -8,22 +8,30 @@ import Hatchback from "../icons/Hatchback";
 const Categoreis = () => {
   return (
     <div className={styles.container}>
-      <div>
-        <p>Sedan</p>
-        <Sedan />
-      </div>
-      <div>
-        <p>Sport</p>
-        <Sport />
-      </div>
-      <div>
-        <p>Suv</p>
-        <Suv />
-      </div>
-      <div>
-        <p>Hatchback</p>
-        <Hatchback />
-      </div>
+      <Link href="/categoreis/sedan">
+        <div>
+          <p>Sedan</p>
+          <Sedan />
+        </div>
+      </Link>
+      <Link href="/categoreis/sport">
+        <div>
+          <p>Sport</p>
+          <Sport />
+        </div>
+      </Link>
+      <Link href="/categoreis/suv">
+        <div>
+          <p>Suv</p>
+          <Suv />
+        </div>
+      </Link>
+      <Link href="/categoreis/hatchback">
+        <div>
+          <p>Hatchback</p>
+          <Hatchback />
+        </div>
+      </Link>
     </div>
   );
 };
