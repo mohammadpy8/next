@@ -1,10 +1,13 @@
-const Home = ({ data }) => {
-  console.log(data);
-
+const Home = ({ post }) => {
   return (
     <div>
       <h3>mohammad nextjs </h3>
-      <h1>{data}</h1>
+      <ul>
+        {post.map((item) => {
+          const { id, title } = item;
+          return <li key={id}>{title}</li>;
+        })}
+      </ul>
     </div>
   );
 };
@@ -12,11 +15,12 @@ const Home = ({ data }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const data = "mohammad";
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await res.json();
 
   return {
     props: {
-      data,
+      post: data,
     },
   };
 }
