@@ -8,6 +8,7 @@ const PostDetail = ({ PostDetail }) => {
   );
 };
 
+
 export default PostDetail;
 
 export async function getStaticPaths() {
