@@ -28,6 +28,7 @@ export async function getStaticProps() {
       posts: data,
     },
     revalidate: 10,
+    notFound: true,
   };
 }
 
