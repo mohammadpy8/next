@@ -33,7 +33,17 @@ export async function getStaticProps(context) {
   );
   const data = await res.json();
 
+  //////////Not Found Page/////////////
+
   if (!data.id) return { notFound: true };
+
+  /////////Redirects Page///////////
+  if (!data.userId)
+    return {
+      redirect: {
+        destination: "/posts",
+      },
+    };
 
   return {
     props: {
