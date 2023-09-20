@@ -8,7 +8,6 @@ const PostDetail = ({ PostDetail }) => {
   );
 };
 
-
 export default PostDetail;
 
 export async function getStaticPaths() {
@@ -38,5 +37,6 @@ export async function getStaticProps(context) {
     props: {
       PostDetail: data,
     },
+    revalidate: 20,
   };
 }
