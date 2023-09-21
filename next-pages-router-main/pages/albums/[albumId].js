@@ -20,6 +20,9 @@ export async function getServerSideProps(context) {
   );
   const data = await response.json();
 
+  if (!data.id) return { notFound: true };
+  if (!data.id) return { redirect: { destination: "/albums" } };
+
   return {
     props: {
       albumDetails: data,
