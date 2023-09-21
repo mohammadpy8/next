@@ -22,11 +22,15 @@ const Albums = ({ albums }) => {
 
 export default Albums;
 
-export async function getServerSideProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/albums");
-  const data = await res.json();
+export async function getServerSideProps(context) {
 
-  console.log(data);
+  const { params, res, req } = context;
+
+  console.log(res, req);
+
+  const response = await fetch("https://jsonplaceholder.typicode.com/albums");
+  const data = await response.json();
+
   return {
     props: {
       albums: data,
