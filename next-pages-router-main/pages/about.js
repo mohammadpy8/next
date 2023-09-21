@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
+const URL = "https://jsonplaceholder.typicode.com/albums";
+
+const fetcher = (URL) => {
+  fetch(URL).then((res) => res.json());
+};
+
 const About = () => {
-//   const [data, setData] = useState([]);
+  //   const [data, setData] = useState([]); 
 
-//   useEffect(() => {
-//     fetch("https://jsonplaceholder.typicode.com/albums")
-//       .then((res) => res.json())
-//       .then((data) => setData(data));
-//   }, []);
+  //   useEffect(() => {
+  //     fetch("https://jsonplaceholder.typicode.com/albums")
+  //       .then((res) => res.json())
+  //       .then((data) => setData(data));
+  //   }, []);
 
-  const { data, error } = useSWR(
-    "https://jsonplaceholder.typicode.com/albums",
-    (url) => fetch(url).then((res) => res.json())
-    );
-    
-    console.log(data, error);
+  const { data, error } = useSWR(URL, fetcher);
+
+  console.log(data, error);
 
   return (
     <div>
